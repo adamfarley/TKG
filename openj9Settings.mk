@@ -58,7 +58,6 @@ endif
 # if JCL_VERSION is current check for default locations for native test libs
 # otherwise, native test libs are under NATIVE_TEST_LIBS
 ifneq (, $(findstring current, $(JCL_VERSION)))
-    $(info Adam Farley debug: JCL_VERSION contains current, as it is $(JCL_VERSION))
 	ifneq (, $(findstring 8, $(JDK_VERSION)))
 		ifneq (,$(findstring win,$(SPEC)))
 			JAVA_SHARED_LIBRARIES_DIR:=$(TEST_JRE_BIN)$(D)$(VM_SUBDIR)
@@ -78,9 +77,7 @@ ifneq (, $(findstring current, $(JCL_VERSION)))
 		endif
 		ADD_JVM_LIB_DIR_TO_LIBPATH:=export LIBPATH=$(Q)$(LIBPATH)$(P)$(TEST_JDK_LIB_DIR)$(D)$(VM_SUBDIR)$(P)$(JAVA_SHARED_LIBRARIES_DIR)$(P)$(TEST_JDK_BIN)$(D)j9vm$(Q);
 	endif
-	$(info Adam Farley debug: ADD_JVM_LIB_DIR_TO_LIBPATH is $(ADD_JVM_LIB_DIR_TO_LIBPATH))
 else
-    $(info Adam Farley debug: JCL_VERSION does not contain current, as it is $(JCL_VERSION))
 	ifneq (, $(findstring 8, $(JDK_VERSION)))
 		ifneq (,$(findstring win,$(SPEC)))
 			VM_SUBDIR_PATH=$(TEST_JRE_BIN)$(D)$(VM_SUBDIR)
@@ -128,10 +125,10 @@ else
 
 	JAVA_SHARED_LIBRARIES_DIR:=$(NATIVE_TEST_LIBS)
 	ADD_JVM_LIB_DIR_TO_LIBPATH:=export $(TEST_LIB_PATH);
-	$(info Adam Farley debug: ADD_JVM_LIB_DIR_TO_LIBPATH is $(ADD_JVM_LIB_DIR_TO_LIBPATH))
 endif
 
 ifneq ($(DEBUG),)
+$(info JCL_VERSION is set to $(JCL_VERSION))
 $(info JAVA_SHARED_LIBRARIES_DIR is set to $(JAVA_SHARED_LIBRARIES_DIR))
 $(info VM_SUBDIR is set to $(VM_SUBDIR))
 $(info ADD_JVM_LIB_DIR_TO_LIBPATH is set to $(ADD_JVM_LIB_DIR_TO_LIBPATH))
