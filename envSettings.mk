@@ -18,7 +18,7 @@
 
 -include autoGenEnv.mk
 
-HOTSPOT_IMPLS=$(or hotspot,sap)
+HOTSPOT_IMPLS=$(or hotspot,sap,bisheng)
 
 ifneq ($(AUTO_DETECT), false) 
     export SPEC:=$(DETECTED_SPEC)
