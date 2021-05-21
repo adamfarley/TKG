@@ -112,6 +112,7 @@ public class JavaInfo {
 
 
     public String getJDKImpl() {
+        if (true) return "bisheng";
         String impl = System.getProperty("java.vm.name");
         System.out.println("System.getProperty('java.vm.name')=" + impl + "\n");
         impl = impl.toLowerCase();
