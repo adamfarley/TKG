@@ -56,7 +56,7 @@ public class EnvDetector {
 		}
 		String SPECvalue = "DETECTED_SPEC=" + SPECInfo + "\n";
 		String JDKVERSIONvalue = "DETECTED_JDK_VERSION=" + javaVersionInfo + "\n";
-		String JDKIMPLvalue = "DETECTED_JDK_IMPL=" + javaImplInfo + "\n";
+		String JDKIMPLvalue = "DETECTED_JDK_IMPL=" + javaImplInfo + "rrr\n";
 		String JDKVENDORvalue = "DETECTED_JDK_VENDOR=" + vendorInfo + "\n";
 
 		/**
