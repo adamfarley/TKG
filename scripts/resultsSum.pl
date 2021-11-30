@@ -236,6 +236,7 @@ sub resultReporter {
 		print $fhOut $tapString;
 		close $fhOut;
 		if ($numOfFailed == 0) {
+			print "Tap file is $tapFile"
 			print "ALL TESTS PASSED\n";
 		}
 	}
