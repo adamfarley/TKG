@@ -237,10 +237,20 @@ sub resultReporter {
 		close $fhOut;
 		if ($numOfFailed == 0) {
 			print "Tap file is $tapFile\n";
-			print "+++++++++++++++Habidashery+++++++++++++";
+			if (-e $filename) {
+				print "TAP File DEFINITELY Exists!";
+			}
+			print "+++++++++++++++Habidashery: Should contain+++++++++++++\n";
 			print "1.." . $numOfTotal . "\n";
 			print $tapString;
-			print "+++++++++++++++Rutabaga++++++++++++++++";
+			print "+++++++++++++++Rutabaga++++++++++++++++\n";
+			print "+++++++++++++++Habidashery: DOES contain+++++++++++++\n";
+			open(DATA, "<$tapFile") or die "Couldn't open file!";
+			while(<DATA>) {
+				print "$_";
+			}
+			close(DATA) or die "Couldn't close file!";
+			print "+++++++++++++++Rutabaga++++++++++++++++\n";
 			print "ALL TESTS PASSED\n";
 		}
 	}
