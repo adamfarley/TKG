@@ -237,6 +237,10 @@ sub resultReporter {
 		close $fhOut;
 		if ($numOfFailed == 0) {
 			print "Tap file is $tapFile\n";
+			print "+++++++++++++++Habidashery+++++++++++++";
+			print "1.." . $numOfTotal . "\n";
+			print $tapString;
+			print "+++++++++++++++Rutabaga++++++++++++++++";
 			print "ALL TESTS PASSED\n";
 		}
 	}
