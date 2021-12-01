@@ -237,7 +237,7 @@ sub resultReporter {
 		close $fhOut;
 		if ($numOfFailed == 0) {
 			print "Tap file is $tapFile\n";
-			if (-e $filename) {
+			if (-e $tapFile) {
 				print "TAP File DEFINITELY Exists!";
 			}
 			print "+++++++++++++++Habidashery: Should contain+++++++++++++\n";
