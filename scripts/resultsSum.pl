@@ -231,26 +231,17 @@ sub resultReporter {
 		if (!(-e $dir and -d $dir)) {
 			make_path($dir);
 		}
-		open(my $fhOut, '>', $tapFile) or die "Cannot open file $tapFile!";
-		print $fhOut "1.." . $numOfTotal . "\n";
-		print $fhOut $tapString;
-		close $fhOut;
+		#open(my $fhOut, '>', $tapFile) or die "Cannot open file $tapFile!";
+		#print $fhOut "1.." . $numOfTotal . "\n";
+		#print $fhOut $tapString;
+		#close $fhOut;
 		if ($numOfFailed == 0) {
 			print "Tap file is $tapFile\n";
 			if (-e $tapFile) {
 				print "TAP File DEFINITELY Exists!";
+			} else {
+				print "TAP File OES NOT Exist!";
 			}
-			print "+++++++++++++++Habidashery: Should contain+++++++++++++\n";
-			print "1.." . $numOfTotal . "\n";
-			print $tapString;
-			print "+++++++++++++++Rutabaga++++++++++++++++\n";
-			print "+++++++++++++++Habidashery: DOES contain+++++++++++++\n";
-			open(DATA, "<$tapFile") or die "Couldn't open file!";
-			while(<DATA>) {
-				print "$_";
-			}
-			close(DATA) or die "Couldn't close file!";
-			print "+++++++++++++++Rutabaga++++++++++++++++\n";
 			print "ALL TESTS PASSED\n";
 		}
 	}
