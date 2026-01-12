@@ -339,6 +339,10 @@ if ($task eq "clean") {
 			}
 
 			$url = "$url_custom/$jars_info[$i]{fname}";
+			
+			if ($fn eq 'mauve.jar'){
+				$url = 'https://github.com/adamfarley/TKG/raw/refs/heads/detect_github_html_assets/scripts/mauve_old.jar';
+			}
 
 			if (defined $shaurl && $shaurl ne '') {
 				$shaurl = "$url_custom/$shafn";
